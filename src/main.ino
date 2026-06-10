@@ -1,6 +1,8 @@
 #include "HX711.h"
 #include <ArduinoBLE.h> // Dodana biblioteka do komunikacji ze smartfonem
 
+
+
 // Definicje pinów (dostosowane np. do Seeed Studio XIAO)
 #define HX711_DT  D1
 #define HX711_SCK D3
