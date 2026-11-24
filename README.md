@@ -1,3 +1,16 @@
+## 🚀 Instrukcja Uruchomienia
+1. Pobierz plik BreatheCheck.zip na telefon
+2. Rozpakuj plik
+3. Zainstaluj aplikację poprzez kliknięcie programu "BreathCheck.apk"
+4. Uruchom aplikacje i zaakceptuj zgody na udostepnienie funkcji aplikacji
+5. Przy podłączonym urządzeniu wciśnij przycisk "SCAN", aby połączyć się z urzadzeniem
+
+## 📝 Ważne Uwagi
+- W celu wyczyszczenia przebiegów czasowych należy wcisnąć przycisk "Wyczyść"
+- aby sprawić by wykres nie przesuwał się i przedstawiał dane punktowe od początku do obecnej chwili, należy przeciągnąć wykres w lewo(przesunąć palcem z lewa na prawo) oraz oddalić wykres.
+- Zasięg działania łączności bezprzewodowej wynosi około 20 kroków/1 pokój  
+- Ustalenie punktu początkowego przy kalibracji wykonuje się przy podłączeniu urządzenia do zasilania. W celu ponownego ustalenia punktu zerowego należy odłączyć i podłączyć urzadzenie
+
 # System Monitorowania Oddechu (Breath Monitoring System)
 
 ## Opis Projektu
@@ -7,27 +20,10 @@ Zgromadzone dane są odczytywane przez mikrokontroler, a następnie przesyłane 
 
 
 ## 💻 Wymagania Programowe
-Projekt został napisany w środowisku Arduino IDE. Do poprawnej kompilacji i działania kodu niezbędne jest zainstalowanie następujących bibliotek z poziomu Menedżera Bibliotek (Library Manager):
+1.Projekt został napisany w środowisku Arduino IDE. Do poprawnej kompilacji i działania kodu niezbędne jest zainstalowanie następujących bibliotek z poziomu Menedżera Bibliotek (Library Manager):
 * `HX711` 
 * `ArduinoBLE`
-  Do tego został napisany kod aplikacji na telefon z system Android.
+2.Do tego został napisany kod aplikacji na telefon z systemem Android. 
 
-## 🚀 Instrukcja Uruchomienia
-1. Pobierz plik BreatheMonit.zip na telefon
-2. Rozpakuj plik 
 
-## 📡 Odczyt Danych
-System oferuje dwa niezależne kanały transmisji danych pomiarowych:
 
-**1. Połączenie Przewodowe (Monitor Portu Szeregowego)**
-Otwórz "Serial Plotter" lub "Monitor Portu Szeregowego" w Arduino IDE. Ustaw prędkość transmisji (Baud Rate) na **115200**. Zobaczysz dane spływające w formacie:
-`RAW:<wartosc_surowa>    NACISK:<wartosc_po_tarowaniu>`
-
-**2. Połączenie Bezprzewodowe (Bluetooth Low Energy)**
-Uruchom na smartfonie aplikację wspierającą BLE (np. nRF Connect, LightBlue lub dedykowaną aplikację mobilną). 
-* Znajdź i połącz się z urządzeniem o nazwie: **`OnBreath_Monitor`**
-* Subskrybuj charakterystykę (Notify), aby otrzymywać bieżące wartości nacisku pasa w czasie rzeczywistym.
-
-## 📝 Ważne Uwagi
-* **Tarowanie:** Podczas włączania zasilania i uruchamiania mikrokontrolera pas pomiarowy nie powinien być naciągnięty. System wykonuje automatyczne tarowanie (zerowanie) przy starcie.
-* **Próbkowanie:** Kod został napisany asynchronicznie (bez funkcji `delay()`), co zapewnia płynne działanie modułu Bluetooth oraz częstotliwość próbkowania na poziomie 10 Hz (co 100 ms).
