@@ -3,34 +3,18 @@
 ## Opis Projektu
 Projekt ten zawiera kod oprogramowania dla urządzenia badawczego służącego do monitorowania oddechu (np. podczas snu). System opiera się na elastycznym pasie pomiarowym z wbudowanymi tensometrami, które rejestrują zmiany nacisku wywołane ruchami klatki piersiowej lub powłok brzusznych podczas cyklu oddechowego. 
 
-Zgromadzone dane są odczytywane przez mikrokontroler, a następnie przesyłane w czasie rzeczywistym – przewodowo przez port szeregowy lub bezprzewodowo za pomocą technologii Bluetooth Low Energy (BLE) do smartfona.
+Zgromadzone dane są odczytywane przez mikrokontroler, a następnie przesyłane w czasie rzeczywistym –  bezprzewodowo za pomocą technologii Bluetooth Low Energy (BLE) do smartfona.
 
-## 🛠️ Architektura Sprzętowa
-Aby zbudować urządzenie, wymagane są następujące komponenty:
-* **Mikrokontroler:** Seeed Studio XIAO (wyposażony w moduł BLE)
-* **Czujniki:** Tensometry zintegrowane z pasem pomiarowym
-* **Wzmacniacz sygnału i przetwornik ADC:** Moduł HX711
-
-### Schemat podłączeń (Pinout)
-| Moduł HX711 | Seeed Studio XIAO |
-| :--- | :--- |
-| VCC | 3.3V (lub 5V, zgodnie z logiką) |
-| GND | GND |
-| DT (Data) | D1 |
-| SCK (Clock) | D3 |
 
 ## 💻 Wymagania Programowe
 Projekt został napisany w środowisku Arduino IDE. Do poprawnej kompilacji i działania kodu niezbędne jest zainstalowanie następujących bibliotek z poziomu Menedżera Bibliotek (Library Manager):
-* `HX711` autorstwa Bogdan Necula
-* `ArduinoBLE` autorstwa Arduino
+* `HX711` 
+* `ArduinoBLE`
+  Do tego został napisany kod aplikacji na telefon z system Android.
 
 ## 🚀 Instrukcja Uruchomienia
-1. Sklonuj repozytorium na swój komputer lub pobierz pliki źródłowe w formie archiwum ZIP.
-2. Otwórz plik `.ino` w programie Arduino IDE.
-3. Podłącz urządzenie Seeed Studio XIAO do komputera.
-4. Z menu `Narzędzia -> Płytka` wybierz odpowiednią konfigurację dla swojego modelu XIAO.
-5. Z menu `Narzędzia -> Port` wybierz port, pod którym wykryto mikrokontroler.
-6. Skompiluj i wgraj kod na urządzenie.
+1. Pobierz plik BreatheMonit.zip na telefon
+2. Rozpakuj plik 
 
 ## 📡 Odczyt Danych
 System oferuje dwa niezależne kanały transmisji danych pomiarowych:
